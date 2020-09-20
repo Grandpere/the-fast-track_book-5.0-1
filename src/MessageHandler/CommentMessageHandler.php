@@ -27,7 +27,14 @@ class CommentMessageHandler implements MessageHandlerInterface
     private $adminEmail;
 
     public function __construct(
-        EntityManagerInterface $entityManager, SpamChecker $spamChecker, CommentRepository $commentRepository, MessageBusInterface $bus, WorkflowInterface $commentStateMachine, MailerInterface $mailer, string $adminEmail, LoggerInterface $logger = null
+        EntityManagerInterface $entityManager,
+        SpamChecker $spamChecker,
+        CommentRepository $commentRepository,
+        MessageBusInterface $bus,
+        WorkflowInterface $commentStateMachine,
+        MailerInterface $mailer,
+        string $adminEmail,
+        LoggerInterface $logger = null
     )
     {
         $this->entityManager = $entityManager;
