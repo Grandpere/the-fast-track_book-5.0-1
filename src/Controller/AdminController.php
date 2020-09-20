@@ -13,10 +13,13 @@ use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Workflow\Registry;
 
+/**
+ * @Route("/admin")
+ */
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/admin/comment/review/{id}", name="review_comment")
+     * @Route("/comment/review/{id}", name="review_comment")
      */
     public function reviewComment(Request $request, Comment $comment, Registry $registry, MessageBusInterface $bus)
     {
@@ -46,7 +49,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/http-cache/{uri<.*>}", methods={"PURGE"}
+     * @Route("/http-cache/{uri<.*>}", methods={"PURGE"}
      */
     public function purgeHttpCache(KernelInterface $kernel, Request $request, string $uri)
     {
