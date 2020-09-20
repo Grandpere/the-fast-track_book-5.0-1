@@ -49,7 +49,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/http-cache/{uri<.*>}", methods={"PURGE"}
+     * @Route("/http-cache/{uri<.*>}", methods={"PURGE"})
      */
     public function purgeHttpCache(KernelInterface $kernel, Request $request, string $uri)
     {
