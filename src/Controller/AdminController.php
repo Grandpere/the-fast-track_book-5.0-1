@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Message\CommentMessage;
+use App\Notification\CommentAcceptedNotification;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache;
@@ -11,6 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Symfony\Component\Notifier\NotifierInterface;
+use Symfony\Component\Notifier\Recipient\Recipient;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Workflow\Registry;
@@ -35,7 +38,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/comment/review/{id}", name="review_comment")
      */
-    public function reviewComment(Request $request, Comment $comment, Registry $registry)
+    public function reviewComment(Request $request, Comment $comment, Registry $registry, NotifierInterface $notifier)
     {
         $accepted = !$request->query->get('reject');
 
@@ -54,6 +57,9 @@ class AdminController extends AbstractController
         if ($accepted) {
             $reviewUrl = $this->generateUrl('review_comment', ['id' => $comment->getId()], UrlGeneratorInterface::ABSOLUTE_URL);
             $this->bus->dispatch(new CommentMessage($comment->getId(), $reviewUrl));
+
+            $notification = new CommentAcceptedNotification($comment);
+            $notifier->send($notification, new Recipient($comment->getEmail()));
         }
 
         return $this->render('admin/review.html.twig', [
