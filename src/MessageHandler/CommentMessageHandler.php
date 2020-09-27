@@ -8,7 +8,7 @@ use App\Message\CommentMessage;
 use App\Notification\CommentReviewNotification;
 use App\Repository\CommentRepository;
 use App\Service\ImageOptimizer;
-use App\SpamChecker;
+use App\Service\SpamChecker;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
