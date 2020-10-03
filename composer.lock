@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc8e1dbac541696fec4a5adf982f9845",
+    "content-hash": "1a53cc97b86da5d46413d3b33f478751",
     "packages": [
         {
             "name": "api-platform/api-pack",
@@ -7435,16 +7435,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v5.0.10",
+            "version": "v5.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "d3262422559eef735b12ed4c7a2fbe8be3ba8898"
+                "reference": "762090e92d8df2b91cace8930ce0329674600225"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/d3262422559eef735b12ed4c7a2fbe8be3ba8898",
-                "reference": "d3262422559eef735b12ed4c7a2fbe8be3ba8898",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/762090e92d8df2b91cace8930ce0329674600225",
+                "reference": "762090e92d8df2b91cace8930ce0329674600225",
                 "shasum": ""
             },
             "require": {
@@ -7522,7 +7522,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-30T20:12:43+00:00"
+            "time": "2020-06-30T17:40:59+00:00"
         },
         {
             "name": "symfony/translation-contracts",
