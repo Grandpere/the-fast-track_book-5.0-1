@@ -37,6 +37,11 @@ class AdminController extends AbstractController
 
     /**
      * @Route("/comment/review/{id}", name="review_comment")
+     * @param Request $request
+     * @param Comment $comment
+     * @param Registry $registry
+     * @param NotifierInterface $notifier
+     * @return Response
      */
     public function reviewComment(Request $request, Comment $comment, Registry $registry, NotifierInterface $notifier)
     {
@@ -70,6 +75,10 @@ class AdminController extends AbstractController
 
     /**
      * @Route("/http-cache/{uri<.*>}", methods={"PURGE"})
+     * @param KernelInterface $kernel
+     * @param Request $request
+     * @param string $uri
+     * @return Response
      */
     public function purgeHttpCache(KernelInterface $kernel, Request $request, string $uri)
     {
