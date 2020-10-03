@@ -9,6 +9,54 @@
         <source>nb_of_comments</source>
         <target>{count, plural, =0 {There are no comments.} one {There is one comment.} other {There are # comments.}}</target>
       </trans-unit>
+      <trans-unit id="jV39rZo" resname="link.view">
+        <source>link.view</source>
+        <target>View</target>
+      </trans-unit>
+      <trans-unit id="Pe35rAj" resname="link.previous">
+        <source>link.previous</source>
+        <target>Previous</target>
+      </trans-unit>
+      <trans-unit id="bDkEODA" resname="link.next">
+        <source>link.next</source>
+        <target>Next</target>
+      </trans-unit>
+      <trans-unit id="2koI_2Q" resname="site.title">
+        <source>site.title</source>
+        <target>Conference Guestbook</target>
+      </trans-unit>
+      <trans-unit id="rRjoLCM" resname="link.top">
+        <source>link.top</source>
+        <target>Back to top</target>
+      </trans-unit>
+      <trans-unit id="U4cqNJ." resname="feedback.title">
+        <source>feedback.title</source>
+        <target>Give your feedback!</target>
+      </trans-unit>
+      <trans-unit id="ysOvPSq" resname="label.name">
+        <source>label.name</source>
+        <target>Your name</target>
+      </trans-unit>
+      <trans-unit id="UQI8T0S" resname="label.text">
+        <source>label.text</source>
+        <target>Text</target>
+      </trans-unit>
+      <trans-unit id="D2N6_cP" resname="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="rapb2ag" resname="label.image">
+        <source>label.image</source>
+        <target>Picture</target>
+      </trans-unit>
+      <trans-unit id="wxtAixP" resname="button.submit">
+        <source>button.submit</source>
+        <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="vSp0oih" resname="conference.no_comments.text">
+        <source>conference.no_comments.text</source>
+        <target>No comments have been posted yet for this conference.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

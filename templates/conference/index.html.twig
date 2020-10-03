@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Conference Guestbook{% endblock %}
+{% block title %}{{ 'site.title'|trans }}{% endblock %}
 
 {% block body %}
     <h2 class="mb-5">
-        {{ 'Give your feedback!'|trans }}
+        {{ 'feedback.title'|trans }}
     </h2>
 
     {% for row in conferences|batch(4) %}
@@ -21,7 +21,7 @@
 
                             <a href="{{ path('conference', { slug: conference.slug }) }}"
                                class="btn btn-sm btn-blue stretched-link">
-                                {{ 'View'|trans }}
+                                {{ 'link.view'|trans }}
                             </a>
                         </div>
                     </div>

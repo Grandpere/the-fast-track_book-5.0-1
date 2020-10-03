@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Conference Guestbook - {{ conference }}{% endblock %}
+{% block title %}{{ 'site.title'|trans }} - {{ conference }}{% endblock %}
 
 {% block body %}
     {% for message in app.flashes('notification') %}
@@ -47,22 +47,25 @@
                 {% endfor %}
                 <div>{{ 'nb_of_comments'|trans({count: comments|length}) }}</div>
                 {% if previous >= 0 %}
-                    <a href="{{ path('conference', { slug: conference.slug, offset: previous }) }}">{{ 'Previous'|trans
-                        }}</a>
+                    <a href="{{ path('conference', { slug: conference.slug, offset: previous }) }}">
+                        {{ 'link.previous'|trans }}
+                    </a>
                 {% endif %}
                 {% if next < comments|length %}
-                    <a href="{{ path('conference', { slug: conference.slug, offset: next }) }}">{{ 'Next'|trans }}</a>
+                    <a href="{{ path('conference', { slug: conference.slug, offset: next }) }}">
+                        {{ 'link.next'|trans }}
+                    </a>
                 {% endif %}
             {% else %}
                 <div class="text-center">
-                    No comments have been posted yet for this conference.
+                    {{ 'conference.no_comments.text'|trans }}
                 </div>
             {% endif %}
         </div>
         <div class="col-12 col-lg-4">
             <div class="bg-light shadow border rounded-lg p-4">
                 <h3 class="font-weight-light">
-                    {{ 'Add your own feedback'|trans }}
+                    {{ 'feedback.title'|trans }}
                 </h3>
 
                 {{ form(comment_form) }}
