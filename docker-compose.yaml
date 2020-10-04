@@ -3,11 +3,25 @@ version: '3'
 services:
     database:
         image: postgres:11-alpine
+        restart: always
         environment:
             POSTGRES_USER: main
             POSTGRES_PASSWORD: main
             POSTGRES_DB: main
-        ports: [5432]
+        ports:
+            - 5432:5432
+
+    adminer:
+        image: adminer
+        restart: always
+        depends_on:
+            -   database
+        environment:
+            ADMINER_DEFAULT_DB_DRIVER: pqsql
+            ADMINER_DEFAULT_DB_HOST: postgres
+            ADMINER_DEFAULT_DB_NAME: main
+        ports:
+            - 8080:8080
 
     redis:
         image: redis:5-alpine
